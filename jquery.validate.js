@@ -13,7 +13,7 @@
             message: "",
             error_message_class: "help-inline",
             error_input_class: "control-group",
-            live: true
+            live: false
         }, options);
         var SelfID = jQuery(this).attr("id");
         
