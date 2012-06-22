@@ -12,7 +12,7 @@
             expression: "return true;",
             message: "",
             error_message_class: "help-inline",
-            error_container_class: "control-group",
+            error_input_class: "control-group",
             live: true
         }, options);
         var SelfID = jQuery(this).attr("id");
@@ -45,7 +45,7 @@
                 // remove error message once an input is focused on 
                 jQuery(this).find('input').bind('focus keypress click', function(){
                     jQuery("#" + SelfID).next('.' + options['error_message_class']).remove();
-                    jQuery("#" + SelfID).parents("." + options['error_container_class']).removeClass('error');
+                    jQuery("#" + SelfID).parents("." + options['error_input_class']).removeClass('error');
                 });
             }
             // if the passed in element is input to validate itselft
@@ -60,7 +60,7 @@
                     jQueryObjectBeforeErrorMessage.next('.' + options['error_message_class']).fadeOut("fast", function(){
                         jQuery(this).remove();
                     });
-    				jQuery(this).parents("." + options['error_container_class']).removeClass('error');
+    				jQuery(this).parents("." + options['error_input_class']).removeClass('error');
                 });
             }
         }
@@ -85,7 +85,7 @@
                 if (jQueryObjectBeforeErrorMessage.next('.' + options['error_message_class']).length == 0) {
 
                     jQueryObjectBeforeErrorMessage.after('<span class="' + options['error_message_class'] + '">' + options['message'] + '</span>');
-					          jQuery(id).parents("div." + options['error_container_class']).addClass("error");
+					          jQuery(id).parents("div." + options['error_input_class']).addClass("error");
                 }
 
 
